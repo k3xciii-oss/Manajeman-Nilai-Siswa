@@ -1,4 +1,4 @@
-================================================== |PROGRAM MANAJEMAN NILAI SISWA| ==================================================
+====|PROGRAM MANAJEMAN NILAI SISWA|====
 
 - FILE DB:
 1. Menghubungkan dengan database Mysql ke python
