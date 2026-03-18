@@ -1,5 +1,15 @@
 ====|PROGRAM MANAJEMAN NILAI SISWA|====
 
+Program berbasis python untuk mengelola data dan nilai siswa dengan menggunakan mysql
+
+# FITUR:
+1. Tambah data siswa
+2. Tambah nilai siswa
+3. Lihat data dan nilai siswa
+4. Hapus data dan nilai siswa
+
+# STRUKTUR FILE 
+
 - FILE DB:
 1. Menghubungkan dengan database Mysql ke python
 2. berisi fungsi:
@@ -33,3 +43,14 @@
 2. Mengimport fungsi start() dari file tool.py
 3. Memanggil fungsi start() yang dimasukkan ke dalam fungsi main
 4. Memanggil fungsi main() yang sudah berisi fungsi start() untuk dijalankan
+
+# CARA MENJALANKAN PROGRAM
+1. Install library Mysql.connector di python dengan terminal
+2. Set up database dengan cara:
+    - Buat database kamu
+    - Buat tabel di dalam database kamu
+    - Untuk tabel_data isi dengan id_siswa,nama,kelas
+    - Buat tabel_nilai lagi, isi dengan id_nilai,mapel,nilai
+    - Lalu hubungkan kedua tabel tersebut
+    - Jangan lupa untuk menyalakan database yang kamu buat menggunkan xampp, agar python bisa terhubung dengan database kamu 
+3. Jalankan program yang di file main.py
