@@ -41,13 +41,24 @@ def add_data():
         
     daftar_nilai = []
     while True:
-        mapel = input('Masukkan Nama Mapel(jika selesai ketik (1)): ')
-    
-        if mapel == '1':
-            break
-        if not mapel:
-            print('Mapel tidak boleh kosong')
-            continue
+        try:
+            mapel = str(input('Masukkan Nama Mapel(jika selesai ketik (selesai)): '))
+
+            if mapel == 'selesai':
+                if len(daftar_nilai) == 0:
+                    print('Minimal harus ada 1 mapel!')
+                    continue
+                break
+            
+            if not mapel:
+                print('Mapel tidak boleh kosong')
+                continue
+            if not mapel.replace(' ','').isalpha():
+                print('Mapel Hanya boleh huruf')
+                continue
+        except ValueError:
+            print('Tidak boleh ada angka atau selain huruf!')
+            
         
         while True:
             try:
