@@ -214,13 +214,35 @@ def predict_lulus():
         except ValueError:
             print('ID harus angka!')
 
+    
     ditemukan = False
     for siswa in data:
         if siswa['id'] == id_siswa:
             ditemukan = True
+            
             rata = hitung_rata(siswa)
-            print(f'{siswa["nama"]}: {prediksi(siswa["kehadiran"], rata)}')
-            print(f'Dengan Rata rata nilai: {rata:.1f} Dan Kehadiran: {siswa["kehadiran"]}')
+            kategori_rata = ''
+            kategori_kehadiran = ''
+            print(garis)
+            print(f'{prediksi(siswa["kehadiran"], rata)}')
+            print(garis)
+            print('Kehadiran: ', siswa['kehadiran'])
+            print(f'Rata - rata: {rata:.1f}')
+            print('\nFaktor Utama:')
+            if rata >= 90:
+                kategori_rata = 'Tinggi'
+            elif rata >= 75:
+                kategori_rata = 'Sedang'
+            else:
+                kategori_rata = 'Rendah'
+            if siswa['kehadiran'] >= 85:
+                kategori_kehadiran = 'Tinggi'
+            elif siswa['kehadiran'] >= 75:
+                kategori_kehadiran = 'Sedang'
+            else:
+                kategori_kehadiran = 'Rendah'
+            print(f'- Kehadiran: {kategori_kehadiran}')
+            print(f'- Nilai Rata - rata: {kategori_rata}')
     if not ditemukan:
         print('\nID Tidak ditemukan')
         input('Tekan Enter Untuk melanjutkan')
@@ -268,7 +290,7 @@ def cari_siswa():
             
             nama_cari = input('Masukkan nama yang di cari: ').strip()
             if not nama_cari:
-                print('Nama Tidak Ditemukan')
+                print('Nama Harus sesuai!')
                 continue
             else:
                 break
